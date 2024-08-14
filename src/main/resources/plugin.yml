@@ -1,0 +1,7 @@
+name: ColorFFA
+main: net.verdox.colorffa.ColorFFA
+version: 1.0
+author: danzel_34
+description: ColorFFA plugin for Verdox
+api-version: 1.13
+website: https://verdox.net

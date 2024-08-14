@@ -1,0 +1,7 @@
+database:
+  host: localhost
+  port: 27017
+  database: test
+  username: test
+  password: test
+  authDatabase: test

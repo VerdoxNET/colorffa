@@ -54,6 +54,8 @@ public class ColorFFA extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ProtectionListener(), this);
         //load first map
         mapManager.load();
+        //enable map cycle
+        mapManager.runMapChange();
     }
 
     @Override

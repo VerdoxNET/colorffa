@@ -22,7 +22,7 @@ public class PlayerInteractListener implements Listener {
             if (blockLocation.getBlock().getType() == ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial() ||
                     blockLocation.getBlock().getType().name().contains("CONCRETE")) {
                 blockLocation.getBlock().setType(ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()));
-                //TODO add coins/wool/blocks idk
+                //TODO add coins/concrete/blocks idk
             }
         } else if (event.getAction().isRightClick() && event.getItem().getType() == Material.NETHER_STAR) {
             new SettingsInventory(event.getPlayer());

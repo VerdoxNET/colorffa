@@ -11,8 +11,10 @@ import java.util.List;
 
 public class MapManager {
 
-    @Getter private Map current;
-    @Getter private List<Map> maps;
+    @Getter
+    private Map current;
+    @Getter
+    private List<Map> maps;
 
     public MapManager() {
         maps = loadMaps();
@@ -70,4 +72,16 @@ public class MapManager {
     public void addMap(Map map) {
         maps.add(map);
     }
+
+    public void runMapChange() {
+        Bukkit.getScheduler().runTaskTimer(ColorFFA.getInstance(), new Runnable() {
+            @Override
+            public void run() {
+                if (maps.size() < 2) return;
+                nextMap();
+                Bukkit.getOnlinePlayers().forEach(player -> player.teleport(current.getSpawn()));
+            }
+        }, 0, 20 * 60 * 20); //all 20 minutes map change
+    }
+
 }

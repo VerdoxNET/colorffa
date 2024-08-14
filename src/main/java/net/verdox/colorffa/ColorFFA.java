@@ -4,6 +4,7 @@ import co.aikar.commands.PaperCommandManager;
 import lombok.Getter;
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.verdox.colorffa.commands.SetupCommand;
+import net.verdox.colorffa.commands.StatsCommand;
 import net.verdox.colorffa.database.DatabaseManager;
 import net.verdox.colorffa.game.GameManager;
 import net.verdox.colorffa.listener.*;
@@ -43,6 +44,7 @@ public class ColorFFA extends JavaPlugin {
         statsManager = new StatsManager();
         //register commands
         commandManager.registerCommand(new SetupCommand());
+        commandManager.registerCommand(new StatsCommand());
         //register listeners
         getServer().getPluginManager().registerEvents(new EntityDamageByEntityListener(), this);
         getServer().getPluginManager().registerEvents(new EntityDamageListener(), this);

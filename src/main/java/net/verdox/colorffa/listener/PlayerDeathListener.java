@@ -35,14 +35,14 @@ public class PlayerDeathListener implements Listener {
             killer.setFoodLevel(20);
             killer.setSaturation(20);
 
-            statsManager.addKill(killer.getName());
-            statsManager.addElo(killer.getName(), 10);
+            statsManager.addKill(killer.getUniqueId().toString());
+            statsManager.addElo(killer.getUniqueId().toString(), 10);
 
             killer.sendMessage(ColorFFA.MINI_MESSAGE.deserialize("<green>You killed " + player.getName() + "!"));
         }
 
-        statsManager.addDeath(player.getName());
-        statsManager.removeElo(player.getName(), 10);
+        statsManager.addDeath(player.getUniqueId().toString());
+        statsManager.removeElo(player.getUniqueId().toString(), 10);
 
         player.setRespawnLocation(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn());
         player.teleport(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn());

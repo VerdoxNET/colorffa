@@ -96,11 +96,11 @@ public class StatsManager {
         statsCollection.deleteOne(document);
     }
 
-    public void getStats(Player player) {
-        player.sendMessage("§aKills: §r" + getKills(player.getName()));
-        player.sendMessage("§aDeaths: §r" + getDeaths(player.getName()));
-        player.sendMessage("§aK/D: §r" + getKD(player.getName()));
-        player.sendMessage("§aPoints: §r" + getPoints(player.getName()));
+    public void getStats(Player player, String targetPlayer) {
+        player.sendMessage("§aKills: §r" + getKills(targetPlayer));
+        player.sendMessage("§aDeaths: §r" + getDeaths(targetPlayer));
+        player.sendMessage("§aK/D: §r" + getKD(targetPlayer));
+        player.sendMessage("§aPoints: §r" + getPoints(targetPlayer));
     }
 
     public void addElo(String playerName, int elo) {
@@ -121,7 +121,7 @@ public class StatsManager {
         Document found = statsCollection.find(document).first();
         if (found == null) {
             document.append("elo", -elo);
-            statsCollection.insertOne(document);    
+            statsCollection.insertOne(document);
         } else {
             int currentElo = found.getInteger("elo");
             currentElo -= elo;

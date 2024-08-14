@@ -5,6 +5,7 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandCompletion;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Optional;
+import net.verdox.colorffa.ColorFFA;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -16,11 +17,10 @@ public class StatsCommand extends BaseCommand {
     @CommandCompletion("@players")
     public void onStats(Player player, @Optional String targetPlayer) {
         if (targetPlayer == null) {
-            //TODO get player stats
+            ColorFFA.getInstance().getStatsManager().getStats(player, player.getUniqueId().toString());
         } else {
             OfflinePlayer target = Bukkit.getOfflinePlayer(targetPlayer);
-
+            ColorFFA.getInstance().getStatsManager().getStats(player, target.getUniqueId().toString());
         }
     }
-
 }

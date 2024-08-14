@@ -14,7 +14,7 @@ public class ScoreboardManager extends ScoreboardBuilder {
     public void initScores() {
         scoreMap.put(0, Component.text(""));
         scoreMap.put(1, Component.text("K/D: §r"));
-        scoreMap.put(2, Component.text("§a " + ColorFFA.getInstance().getStatsManager().getKD(player.getName())));
+        scoreMap.put(2, Component.text("§a " + ColorFFA.getInstance().getStatsManager().getKD(player.getUniqueId().toString())));
         scoreMap.put(3, Component.text(""));
         scoreMap.put(4, Component.text("Map: §r"));
         scoreMap.put(5, Component.text("§a" + ColorFFA.getInstance().getMapManager().getCurrent().getName()));

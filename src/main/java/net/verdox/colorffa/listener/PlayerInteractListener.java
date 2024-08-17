@@ -18,7 +18,6 @@ public class PlayerInteractListener implements Listener {
             return;
         if (event.getAction().isRightClick() && event.getItem().getType() == Material.DIAMOND_HOE && event.getClickedBlock() != null) {
             Location blockLocation = event.getClickedBlock().getLocation();
-            //TODO replace block and check if block is colored by an other player or if its a not colorable block
             if (blockLocation.getBlock().getType() == ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial() ||
                     blockLocation.getBlock().getType().name().contains("CONCRETE")) {
                 blockLocation.getBlock().setType(ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()));

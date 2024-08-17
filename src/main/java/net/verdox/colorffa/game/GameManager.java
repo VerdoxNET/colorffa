@@ -1,6 +1,7 @@
 package net.verdox.colorffa.game;
 
 import net.verdox.colorffa.ColorFFA;
+import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -31,7 +32,10 @@ public class GameManager {
                 coloredBlocks.remove(location);
             }
         }
-        playerColors.remove(player);
+
+        Bukkit.getScheduler().runTaskLater(ColorFFA.getInstance(), () -> {
+            playerColors.remove(player);
+        }, 10*20);
     }
 
     public Material getPlayerColor(Player player) {

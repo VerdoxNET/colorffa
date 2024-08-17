@@ -4,7 +4,7 @@ import net.kyori.adventure.text.Component;
 import net.verdox.colorffa.ColorFFA;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-//TODO make SB
+
 public class ScoreboardManager extends ScoreboardBuilder {
     public ScoreboardManager(Player player) {
         super(player, "ColorFFA");

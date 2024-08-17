@@ -20,6 +20,8 @@ public class PlayerInteractListener implements Listener {
             Location blockLocation = event.getClickedBlock().getLocation();
             if (blockLocation.getBlock().getType() == ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial() ||
                     blockLocation.getBlock().getType().name().contains("CONCRETE")) {
+                if (event.getClickedBlock().getType() == ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()))
+                    return;
                 blockLocation.getBlock().setType(ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()));
                 //TODO add coins/concrete/blocks idk
             }

@@ -12,7 +12,7 @@ public class PlayerQuitListener implements Listener {
     @EventHandler
     public void onQuit(PlayerQuitEvent event) {
         Player player = event.getPlayer();
-        event.quitMessage(Component.empty());
         ColorFFA.getInstance().getGameManager().removePlayerColor(player);
+        event.quitMessage(Component.empty());
     }
 }

@@ -7,6 +7,7 @@ import net.verdox.colorffa.commands.SetupCommand;
 import net.verdox.colorffa.commands.StatsCommand;
 import net.verdox.colorffa.database.DatabaseManager;
 import net.verdox.colorffa.game.GameManager;
+import net.verdox.colorffa.inventories.SettingsInventory;
 import net.verdox.colorffa.listener.*;
 import net.verdox.colorffa.map.MapManager;
 import net.verdox.colorffa.stats.StatsManager;
@@ -54,6 +55,8 @@ public class ColorFFA extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PlayerMoveListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerQuitListener(), this);
         getServer().getPluginManager().registerEvents(new ProtectionListener(), this);
+        //register menus
+        getServer().getPluginManager().registerEvents(new SettingsInventory(), this);
         //load first map
         mapManager.load();
         //enable map cycle

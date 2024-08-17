@@ -13,10 +13,10 @@ public class InventoryUtils {
         player.setFoodLevel(20);
         player.setSaturation(20);
 
-        player.getInventory().setItem(4, new ItemBuilder(Material.WRITTEN_BOOK).setDisplayName("§4Tutorial")
+        player.getInventory().setItem(4, new ItemBuilder(Material.WRITTEN_BOOK).setDisplayName("<green>Tutorial")
                 .setBookContent("Tutorial", "SERVER", "This game is a nice game...").build());
         if (player.hasPermission("verdox.colorffa.settings"))
-            player.getInventory().setItem(8, new ItemBuilder(Material.NETHER_STAR).setDisplayName("§1§lSettings").build());
+            player.getInventory().setItem(8, new ItemBuilder(Material.NETHER_STAR).setDisplayName("<aqua><b>Settings").build());
     }
 
     public static void prepareJump(Player player) {
@@ -27,7 +27,7 @@ public class InventoryUtils {
         player.setFoodLevel(20);
         player.setSaturation(20);
 
-        player.getInventory().setItem(0, new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("§1§lSword").setUnbreakable(true).build());
-        player.getInventory().setItem(1, new ItemBuilder(Material.DIAMOND_HOE).setDisplayName("§1§lColor Gun").setUnbreakable(true).build());
+        player.getInventory().setItem(0, new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("<green><b>Sword").setUnbreakable(true).build());
+        player.getInventory().setItem(1, new ItemBuilder(Material.DIAMOND_HOE).setDisplayName("<green><b>Color Gun").setUnbreakable(true).build());
     }
 }

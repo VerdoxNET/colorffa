@@ -1,6 +1,7 @@
 package net.verdox.colorffa.utils;
 
 import net.kyori.adventure.text.Component;
+import net.verdox.colorffa.ColorFFA;
 import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
@@ -19,7 +20,7 @@ public class ItemBuilder {
     }
 
     public ItemBuilder setDisplayName(String displayName) {
-        itemMeta.displayName(Component.text(displayName));
+        itemMeta.displayName(ColorFFA.MINI_MESSAGE.deserialize(displayName));
         return this;
     }
 

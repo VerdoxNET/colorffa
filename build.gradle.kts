@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.verdox"
-version = "1.0-SNAPSHOT"
+version = "0.1-alpha"
 
 repositories {
     mavenCentral()
@@ -35,5 +35,9 @@ tasks {
     shadowJar {
         minimize()
         relocate("co.aikar", "net.verdox.lib")
+    }
+
+    compileJava {
+        options.encoding = "UTF-8"
     }
 }

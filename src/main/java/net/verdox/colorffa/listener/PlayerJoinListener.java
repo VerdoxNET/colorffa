@@ -20,8 +20,9 @@ public class PlayerJoinListener implements Listener {
             player.teleport(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn());
         }
 
+        ColorFFA.getInstance().getGameManager().addPlayerColor(player);
+
         InventoryUtils.prepareJoin(player);
         new ScoreboardManager(player);
-        ColorFFA.getInstance().getGameManager().addPlayerColor(player);
     }
 }

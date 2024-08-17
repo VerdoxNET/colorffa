@@ -3,6 +3,7 @@ package net.verdox.colorffa.stats;
 import com.mongodb.client.MongoCollection;
 import net.verdox.colorffa.ColorFFA;
 import org.bson.Document;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class StatsManager {
@@ -97,10 +98,10 @@ public class StatsManager {
     }
 
     public void getStats(Player player, String targetPlayer) {
-        player.sendMessage("§aKills: §r" + getKills(targetPlayer));
-        player.sendMessage("§aDeaths: §r" + getDeaths(targetPlayer));
-        player.sendMessage("§aK/D: §r" + getKD(targetPlayer));
-        player.sendMessage("§aPoints: §r" + getPoints(targetPlayer));
+        player.sendMessage(ChatColor.GREEN + "Kills: " + ChatColor.GRAY + getKills(targetPlayer));
+        player.sendMessage(ChatColor.GREEN + "Deaths: " + ChatColor.GRAY + getDeaths(targetPlayer));
+        player.sendMessage(ChatColor.GREEN + "K/D: " + ChatColor.GRAY + getKD(targetPlayer));
+        player.sendMessage(ChatColor.GREEN + "Points: " + ChatColor.GRAY + getPoints(targetPlayer));
     }
 
     public void addElo(String playerName, int elo) {

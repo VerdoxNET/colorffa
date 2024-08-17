@@ -27,15 +27,19 @@ public class GameManager {
 
     public void removePlayerColor(Player player) {
         for (Location location : coloredBlocks.keySet()) {
-            if (location.getBlock().getType() == getPlayerColor(player)) {
+            System.out.println("0");
+            if (coloredBlocks.get(location) == getPlayerColor(player)) {
+                System.out.println("1");
                 location.getBlock().setType(ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial());
+                System.out.println("2");
                 coloredBlocks.remove(location);
+                System.out.println("3");
             }
         }
 
         Bukkit.getScheduler().runTaskLater(ColorFFA.getInstance(), () -> {
             playerColors.remove(player);
-        }, 10*20);
+        }, 20*20);
     }
 
     public Material getPlayerColor(Player player) {

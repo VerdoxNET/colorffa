@@ -19,19 +19,19 @@ public class PlayerMoveListener implements Listener {
         if (event.getTo().getY() < ColorFFA.getInstance().getMapManager().getCurrent().getSpawnHeight() &&
                 event.getFrom().getY() >= ColorFFA.getInstance().getMapManager().getCurrent().getSpawnHeight()) {
             InventoryUtils.prepareJump(player);
-            player.sendMessage("§3You are now in the game!");
+            player.sendMessage(ColorFFA.MINI_MESSAGE.deserialize("<aqua>You are now in the game!"));
         }
 
         if (player.getLocation().getY() < ColorFFA.getInstance().getMapManager().getCurrent().getDeathHeight()) {
             //todo add death to player or not ?!
             if (player.getLastDamageCause() != null && player.getLastDamageCause().getEntity() != null && player.getLastDamageCause().getEntity() instanceof Player) {
                 Player killer = (Player) player.getLastDamageCause().getEntity();
-                Bukkit.broadcast(Component.text("§c" + player.getName() + " was killed by " + killer.getName() + "!"));
+                Bukkit.broadcast(ColorFFA.MINI_MESSAGE.deserialize("<red>" + player.getName() + " was killed by " + killer.getName() + "!"));
             }
 
             player.teleport(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn());
             InventoryUtils.prepareJoin(player);
-            player.sendMessage("§cYou died!");
+            player.sendMessage(ColorFFA.MINI_MESSAGE.deserialize("<red>You died!"));
         }
     }
 }

@@ -1,5 +1,6 @@
 package net.verdox.colorffa.inventories;
 
+import lombok.NoArgsConstructor;
 import net.verdox.colorffa.ColorFFA;
 import net.verdox.colorffa.utils.ItemBuilder;
 import org.bukkit.Bukkit;
@@ -10,6 +11,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 
+@NoArgsConstructor
 public class SettingsInventory implements Listener {
     private Player player;
     private Inventory inventory;

@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class ScoreboardManager extends ScoreboardBuilder {
     public ScoreboardManager(Player player) {
-        super(player, "ColorFFA");
+        super(player, "<gray>•● <dark_blue>C<dark_green>o<dark_aqua>l<dark_red>o<dark_purple>r<gold>FFA <gray>●•");
     }
 
     @Override

@@ -2,6 +2,7 @@ package net.verdox.colorffa.scoreboard;
 
 
 import net.kyori.adventure.text.Component;
+import net.verdox.colorffa.ColorFFA;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.*;
@@ -38,7 +39,7 @@ public abstract class ScoreboardBuilder {
             Objects.requireNonNull(this.scoreboard.getObjective("display")).unregister();
         }
 
-        this.objective = this.scoreboard.registerNewObjective("display", Criteria.DUMMY, Component.text(displayName));
+        this.objective = this.scoreboard.registerNewObjective("display", Criteria.DUMMY, ColorFFA.MINI_MESSAGE.deserialize(displayName));
         this.objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 
         initScores();

@@ -23,6 +23,7 @@ public class PlayerInteractListener implements Listener {
                 if (event.getClickedBlock().getType() == ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()))
                     return;
                 blockLocation.getBlock().setType(ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()));
+                ColorFFA.getInstance().getGameManager().addColoredBlock(blockLocation, ColorFFA.getInstance().getGameManager().getPlayerColor(event.getPlayer()));
                 //TODO add coins/concrete/blocks idk
             }
         } else if (event.getAction().isRightClick() && event.getItem().getType() == Material.NETHER_STAR) {

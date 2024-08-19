@@ -27,13 +27,9 @@ public class GameManager {
 
     public void removePlayerColor(Player player) {
         for (Location location : coloredBlocks.keySet()) {
-            System.out.println("0");
             if (coloredBlocks.get(location) == getPlayerColor(player)) {
-                System.out.println("1");
                 location.getBlock().setType(ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial());
-                System.out.println("2");
                 coloredBlocks.remove(location);
-                System.out.println("3");
             }
         }
 
@@ -51,5 +47,9 @@ public class GameManager {
         if (playerColors.containsValue(material))
             return getRandomColor();
         return material;
+    }
+
+    public void addColoredBlock(Location location, Material material) {
+        coloredBlocks.put(location, material);
     }
 }

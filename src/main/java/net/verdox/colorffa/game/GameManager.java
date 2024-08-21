@@ -15,6 +15,7 @@ public class GameManager {
     private final List<Material> allowedMaterials = List.of(Material.WHITE_CONCRETE, Material.ORANGE_CONCRETE, Material.MAGENTA_CONCRETE, Material.LIGHT_BLUE_CONCRETE, Material.YELLOW_CONCRETE, Material.LIME_CONCRETE, Material.PINK_CONCRETE, Material.GRAY_CONCRETE, Material.LIGHT_GRAY_CONCRETE, Material.CYAN_CONCRETE, Material.PURPLE_CONCRETE, Material.BLUE_CONCRETE, Material.BROWN_CONCRETE, Material.GREEN_CONCRETE, Material.RED_CONCRETE, Material.BLACK_CONCRETE);
     private final Map<Player, Material> playerColors;
     private final Map<Location, Material> coloredBlocks;
+
     public GameManager() {
         playerColors = new HashMap<>();
         coloredBlocks = new HashMap<>();
@@ -26,12 +27,24 @@ public class GameManager {
     }
 
     public void removePlayerColor(Player player) {
+        List<Location> remove = new ArrayList<>();
         for (Location location : coloredBlocks.keySet()) {
+            if (coloredBlocks.get(location) == getPlayerColor(player)) {
+                location.getBlock().setType(ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial());
+               remove.add(location);
+            }
+        }
+
+        for (Location location : remove) {
+            coloredBlocks.remove(location);
+        }
+
+        /*colored.forEach(location -> { //colored as list
             if (coloredBlocks.get(location) == getPlayerColor(player)) {
                 location.getBlock().setType(ColorFFA.getInstance().getMapManager().getCurrent().getDefaultMaterial());
                 coloredBlocks.remove(location);
             }
-        }
+        });*/
 
         Bukkit.getScheduler().runTaskLater(ColorFFA.getInstance(), () -> {
             playerColors.remove(player);

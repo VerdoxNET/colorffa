@@ -20,9 +20,7 @@ public class EntityDamageByEntityListener implements Listener {
                 if (player.getLocation().getY() > ColorFFA.getInstance().getMapManager().getCurrent().getSpawnHeight()) {
                     event.setCancelled(true);
                     damager.sendMessage("§cYou can't hit players in the spawn area!");
-                }
-
-                if (damager.getLocation().getY() > ColorFFA.getInstance().getMapManager().getCurrent().getSpawnHeight()) {
+                } else if (damager.getLocation().getY() > ColorFFA.getInstance().getMapManager().getCurrent().getSpawnHeight()) {
                     event.setCancelled(true);
                     damager.sendMessage("§cYou can't hit players from the spawn area!");
                 }

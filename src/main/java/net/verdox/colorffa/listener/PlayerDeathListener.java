@@ -24,6 +24,7 @@ public class PlayerDeathListener implements Listener {
         event.getDrops().clear();
         event.setDroppedExp(0);
         player.setLevel(0);
+        player.teleport(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn()); //dont get tp to spawn
 
         StatsManager statsManager = ColorFFA.getInstance().getStatsManager();
 

@@ -26,7 +26,7 @@ public class PlayerMoveListener implements Listener {
             //todo add death to player or not ?!
             if (player.getLastDamageCause() != null && player.getLastDamageCause().getEntity() != null && player.getLastDamageCause().getEntity() instanceof Player) {
                 Player killer = (Player) player.getLastDamageCause().getEntity();
-                Bukkit.broadcast(ColorFFA.MINI_MESSAGE.deserialize("<red>" + player.getName() + " was killed by " + killer.getName() + "!"));
+                Bukkit.broadcast(ColorFFA.MINI_MESSAGE.deserialize("<red>" + player.getName() + " was killed by " + killer.getName() + "!")); //todo player killed by itself ?!!!!
             }
 
             player.teleport(ColorFFA.getInstance().getMapManager().getCurrent().getSpawn());

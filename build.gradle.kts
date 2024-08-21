@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "net.verdox"
-version = "0.1-alpha"
+version = "1.0"
 
 repositories {
     mavenCentral()
